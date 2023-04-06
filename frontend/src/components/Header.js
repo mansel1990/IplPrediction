@@ -17,31 +17,29 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Template</Navbar.Brand>
+            <Navbar.Brand>Expense Tracker</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <LinkContainer to="/admin">
-                <Nav.Link>
-                  <i className="fa fa-bell px-1" aria-hidden="true" />
-                  Admin
-                </Nav.Link>
+              <LinkContainer to="/viewexpense" className="px-2">
+                <Nav.Link>Expenses</Nav.Link>
               </LinkContainer>
               {userInfo ? (
-                <NavDropdown title={userInfo.name} id="username">
-                  <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
+                <NavDropdown
+                  className="px-2"
+                  title={userInfo.name}
+                  id="username"
+                >
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <LinkContainer to="/login">
+                <LinkContainer to="/login" className="px-2">
                   <Nav.Link>
                     <i className="fa fa-user px-1" aria-hidden="true" />
                     Log in

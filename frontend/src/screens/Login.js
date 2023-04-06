@@ -42,10 +42,10 @@ const Login = () => {
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>User Name</Form.Label>
           <Form.Control
-            type="email"
-            placeholder="Enter email"
+            type="text"
+            placeholder="Enter name"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>

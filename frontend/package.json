@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "http://localhost:6001",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,12 +8,15 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.0",
     "@mui/material": "^5.5.0",
+    "@mui/x-data-grid": "^6.0.4",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "dayjs": "^1.11.7",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-bootstrap": "^0.26.0",

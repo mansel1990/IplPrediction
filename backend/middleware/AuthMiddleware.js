@@ -12,10 +12,9 @@ const protect = asyncHandler(async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
       const query = util.promisify(dbConn.query).bind(dbConn);
       const users = await query(
-        `SELECT * FROM template.users u where u.user_id = "${decoded.id}"`
+        `SELECT * FROM u932593839_ipl.users u where u.id = "${decoded.id}"`
       );
 
       req.user = users[0];

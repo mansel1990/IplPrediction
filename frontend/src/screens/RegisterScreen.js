@@ -9,11 +9,9 @@ import { register } from "../actions/userAction";
 import FormContainer from "../components/FormContainer";
 
 const RegisterScreen = () => {
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
@@ -38,8 +36,10 @@ const RegisterScreen = () => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
+    } else if (!name || !password) {
+      setMessage("Please enter values for all fields");
     } else {
-      dispatch(register(name, email, password, phone));
+      dispatch(register(name, password));
     }
   };
   return (
@@ -50,32 +50,12 @@ const RegisterScreen = () => {
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="name">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>User Name</Form.Label>
           <Form.Control
             type="name"
             placeholder="Enter name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId="email">
-          <Form.Label>Email Address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId="phone">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control
-            type="phone"
-            placeholder="Enter phone number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
           ></Form.Control>
         </Form.Group>
 

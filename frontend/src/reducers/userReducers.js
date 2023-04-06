@@ -13,6 +13,15 @@ import {
   USER_UPDATE_PROFILE_REQUEST,
   USER_UPDATE_PROFILE_RESET,
   USER_UPDATE_PROFILE_SUCCESS,
+  GET_ALL_USER_REQUEST,
+  GET_ALL_USER_SUCCESS,
+  GET_ALL_USER_FAIL,
+  CREATE_GROUP_SUCCESS,
+  CREATE_GROUP_FAIL,
+  CREATE_GROUP_REQUEST,
+  GET_GROUP_DETAILS_REQUEST,
+  GET_GROUP_DETAILS_SUCCESS,
+  GET_GROUP_DETAILS_FAIL,
 } from "../constants/userConstants";
 
 export const userLoginReducer = (state = {}, action) => {
@@ -98,6 +107,69 @@ export const userUpdateProfileReducer = (state = {}, action) => {
       };
     case USER_UPDATE_PROFILE_RESET:
       return {};
+    default:
+      return state;
+  }
+};
+
+export const getAllUsersReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_ALL_USER_REQUEST:
+      return {
+        loading: true,
+      };
+    case GET_ALL_USER_SUCCESS:
+      return {
+        loading: false,
+        allUsers: action.payload,
+      };
+    case GET_ALL_USER_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const createGroupReducer = (state = {}, action) => {
+  switch (action.type) {
+    case CREATE_GROUP_REQUEST:
+      return {
+        loading: true,
+      };
+    case CREATE_GROUP_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+    case CREATE_GROUP_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const getGroupDetailsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_GROUP_DETAILS_REQUEST:
+      return {
+        loading: true,
+      };
+    case GET_GROUP_DETAILS_SUCCESS:
+      return {
+        loading: false,
+        groupDetails: action.payload,
+      };
+    case GET_GROUP_DETAILS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
