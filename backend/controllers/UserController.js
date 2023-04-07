@@ -101,6 +101,7 @@ const getGroupDetails = asyncHandler(async (req, res, next) => {
         groupName: userDetails.group_name,
         groupId: userDetails.group_id,
         budget: userDetails.budget,
+        startDate: userDetails.start_date,
       });
     } else {
       res.json({
@@ -137,7 +138,6 @@ const createGroup = asyncHandler(async (req, res, next) => {
           VALUES('${groupName}', '${startDate}', '${budget}');`;
     const result = await query(insertUser);
     const groupId = result.insertId;
-    console.log(groupId, seletedUserIds);
 
     const userUpdate = `UPDATE u932593839_ipl.users
     SET group_id='${groupId}'

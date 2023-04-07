@@ -71,3 +71,57 @@ footer {
     margin-top: 5%;
   }
 }
+.icon-row {
+  height: 10vh;
+  @media screen and (max-width: 576px) {
+    height: 20vh;
+  }
+  .icon-col {
+    .icon-image-div {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 100%;
+      width: auto;
+    }
+    .seven-eleven {
+      background-image: url("./images/711Logo.png");
+    }
+    .daiso {
+      background-image: url("./images/daiso.png");
+      height: 92%;
+    }
+    .lawson {
+      background-image: url("./images/lawson.png");
+    }
+    .donki {
+      background-image: url("./images/donki.jpeg");
+    }
+    .life {
+      background-image: url("./images/life.jpeg");
+    }
+    .cricket {
+      background-image: url("./images/cricket.jpeg");
+      height: 80%;
+    }
+    .amazon {
+      background-image: url("./images/amazon.png");
+    }
+    .suica {
+      background-image: url("./images/suica.png");
+    }
+    .vegi {
+      background-image: url("./images/vegi.jpeg");
+    }
+    .food {
+      background-image: url("./images/food.png");
+    }
+    .toys {
+      background-image: url("./images/toys.jpeg");
+    }
+  }
+}
+.month-select-div {
+  display: flex;
+  align-items: baseline;
+}

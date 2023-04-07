@@ -13,6 +13,7 @@ import {
 import {
   expenseAddReducer,
   expenseGetReducer,
+  selectExpenseReducer,
 } from "./reducers/expenseReducers";
 
 const reducer = combineReducers({
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   getAllUsers: getAllUsersReducer,
   createGroup: createGroupReducer,
   getGroupDetails: getGroupDetailsReducer,
+  selectedExpense: selectExpenseReducer,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

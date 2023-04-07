@@ -25,6 +25,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <LinkContainer to="/stats" className="px-2">
+                <Nav.Link>Statistics</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/viewexpense" className="px-2">
                 <Nav.Link>Expenses</Nav.Link>
               </LinkContainer>

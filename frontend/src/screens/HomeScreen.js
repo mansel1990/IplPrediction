@@ -9,6 +9,8 @@ import Loader from "../components/Loader";
 import BudgetCard from "../components/BudgetCard";
 import { getExpense } from "../actions/expenseAction";
 
+import ShopIcons from "../components/ShopIcons";
+
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const HomeScreen = () => {
   useEffect(() => {
     if (userInfo) {
       dispatch(getGroupDetails);
-      dispatch(getExpense);
+      dispatch(getExpense());
     } else {
       navigate("/login");
     }
@@ -56,6 +58,7 @@ const HomeScreen = () => {
           <AddExpenseForm />
         </Col>
       </Row>
+      <ShopIcons />
     </div>
   ) : (
     <div className="mt-4">

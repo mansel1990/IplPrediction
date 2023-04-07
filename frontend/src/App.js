@@ -8,6 +8,7 @@ import ViewExpense from "./screens/ViewExpense";
 import Login from "./screens/Login";
 import RegisterScreen from "./screens/RegisterScreen";
 import Groups from "./screens/Groups";
+import Stats from "./screens/Stats";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/groups" element={<Groups />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterScreen />} />
+            <Route path="/stats" element={<Stats />} />
           </Routes>
         </Container>
       </main>

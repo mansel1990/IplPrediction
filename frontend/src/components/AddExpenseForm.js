@@ -16,7 +16,8 @@ import {
   Alert,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { addExpense } from "../actions/expenseAction";
+import { addExpense, resetSelection } from "../actions/expenseAction";
+import { categoryList } from "../constants/categoryList";
 
 const AddExpenseForm = () => {
   const [name, setName] = useState("");
@@ -36,21 +37,8 @@ const AddExpenseForm = () => {
     success: successAdd,
   } = expenseAdd;
 
-  const categoryList = [
-    "Daily Essentials",
-    "Grocery",
-    "Transport",
-    "Eating out",
-    "Outing/Trip",
-    "One time",
-    "Shopping",
-    "Sports/Games",
-    "Rent",
-    "Bills",
-    "Health",
-    "Electronics",
-    "Toys",
-  ];
+  const selectedExpense = useSelector((state) => state.selectedExpense);
+  const { selectedIcon, selectedCategory } = selectedExpense;
 
   const handleClose = () => {
     setOpen(false);
@@ -58,12 +46,20 @@ const AddExpenseForm = () => {
 
   useEffect(() => {
     if (successAdd) {
+      dispatch(resetSelection);
       setOpen(true);
       setName("");
       setAmount("");
       setCategory(null);
     }
-  }, [successAdd]);
+  }, [successAdd, dispatch]);
+
+  useEffect(() => {
+    if (selectedIcon && selectedCategory) {
+      setName(selectedIcon);
+      setCategory(selectedCategory);
+    }
+  }, [selectedIcon, selectedCategory]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -72,7 +68,7 @@ const AddExpenseForm = () => {
     } else {
       setMessage("");
       dispatch(
-        addExpense(name, amount, category, date.toLocaleDateString("en-US"))
+        addExpense(name, amount, category, date.toLocaleDateString("ja-JP"))
       );
     }
   };

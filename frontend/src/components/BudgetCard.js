@@ -16,13 +16,16 @@ const BudgetCard = ({ name }) => {
   let expenseAmt = 0,
     budgetAmt = 0,
     remainingAmt = 0;
-  expenseData.forEach((e) => {
-    expenseAmt += e.amount;
-  });
-  if (groupDetails) {
-    budgetAmt = groupDetails.budget;
+
+  if (expenseData) {
+    expenseData.forEach((e) => {
+      expenseAmt += e.amount;
+    });
+    if (groupDetails) {
+      budgetAmt = groupDetails.budget;
+    }
+    remainingAmt = budgetAmt - expenseAmt;
   }
-  remainingAmt = budgetAmt - expenseAmt;
 
   const getPercent = (x, y) => {
     return (x / y) * 100;
@@ -45,7 +48,7 @@ const BudgetCard = ({ name }) => {
       ? (variant = "success")
       : sendPercent < 80
       ? (variant = "warning")
-      : (variant = "success");
+      : (variant = "danger");
   } else if (name === "budget" && groupDetails) {
     sendAmount = budgetAmt;
     sendName = "Budget";

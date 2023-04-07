@@ -2,6 +2,8 @@ import {
   EXPENSE_ADD_FAIL,
   EXPENSE_ADD_REQUEST,
   EXPENSE_ADD_SUCCESS,
+  EXPENSE_SELECT,
+  EXPENSE_SELECT_RESET,
   GET_EXPENSE_FAIL,
   GET_EXPENSE_REQUEST,
   GET_EXPENSE_SUCCESS,
@@ -43,6 +45,22 @@ export const expenseGetReducer = (state = {}, action) => {
       return {
         loading: false,
         error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const selectExpenseReducer = (state = {}, action) => {
+  switch (action.type) {
+    case EXPENSE_SELECT:
+      return {
+        selectedIcon: action.payload.selectedIcon,
+        selectedCategory: action.payload.selectedCategory,
+      };
+    case EXPENSE_SELECT_RESET:
+      return {
+        selectedExpense: {},
       };
     default:
       return state;
