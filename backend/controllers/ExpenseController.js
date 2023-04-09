@@ -52,7 +52,6 @@ export const addExpense = asyncHandler(async (req, res, next) => {
       const expenses = `SELECT * 
             FROM u932593839_ipl.expense 
             where group_id='${group_id}' 
-            and user_id='${id}'
             and createdDate BETWEEN '${startPoint}' and '${endPoint}'`;
       const result = await query(expenses);
 
@@ -81,7 +80,6 @@ export const getExpense = asyncHandler(async (req, res, next) => {
     const expenses = `SELECT * 
         FROM u932593839_ipl.expense 
         where group_id='${group_id}' 
-        and user_id='${id}'
         and createdDate BETWEEN '${startPoint}' and '${endPoint}'
         order by expense_id desc`;
     const result = await query(expenses);
