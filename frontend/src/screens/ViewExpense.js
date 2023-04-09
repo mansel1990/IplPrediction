@@ -103,7 +103,7 @@ const ViewExpense = () => {
           {selectedDays ? selectedDays : startPoint + " to " + endPoint}
         </div>
       </div>
-      <div style={{ height: "55vh", width: "100%" }}>
+      <div style={{ height: "60vh", width: "100%" }}>
         {loading ? (
           <Loader />
         ) : (

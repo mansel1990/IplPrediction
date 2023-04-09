@@ -9,6 +9,7 @@ import Login from "./screens/Login";
 import RegisterScreen from "./screens/RegisterScreen";
 import Groups from "./screens/Groups";
 import Stats from "./screens/Stats";
+import EditGroups from "./screens/EditGroups";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterScreen />} />
             <Route path="/stats" element={<Stats />} />
+            <Route path="/editgroup" element={<EditGroups />} />
           </Routes>
         </Container>
       </main>
