@@ -15,12 +15,12 @@ const getStartEndPoint = (startDate, selectedMonth = null) => {
   let startPoint = "",
     endPoint = "";
 
-  if (currentDate <= startDate) {
+  if (currentDate < startDate) {
     startPoint = `${currentYear}-${currentMonth}-${startDate}`;
-    endPoint = `${currentYear}-${currentMonth + 1}-${startDate}`;
+    endPoint = `${currentYear}-${currentMonth + 1}-${startDate - 1}`;
   } else {
     startPoint = `${currentYear}-${currentMonth + 1}-${startDate}`;
-    endPoint = `${currentYear}-${currentMonth + 2}-${startDate}`;
+    endPoint = `${currentYear}-${currentMonth + 2}-${startDate - 1}`;
   }
   return { startPoint, endPoint };
 };

@@ -94,6 +94,16 @@ const getGroupDetails = asyncHandler(async (req, res, next) => {
       and u.name = '${user.name}'`
     );
     const userDetails = userArray[0];
+
+    const groupArr = await query(
+      `SELECT
+        u.id,
+        u.name
+      FROM
+        u932593839_ipl.users u
+      where 
+        u.group_id = '${userDetails.group_id}'`
+    );
     if (userDetails) {
       res.json({
         userId: user.id,
@@ -102,6 +112,7 @@ const getGroupDetails = asyncHandler(async (req, res, next) => {
         groupId: userDetails.group_id,
         budget: userDetails.budget,
         startDate: userDetails.start_date,
+        usersInGroup: groupArr,
       });
     } else {
       res.json({

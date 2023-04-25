@@ -37,6 +37,7 @@ const Groups = () => {
   const [selectedUser, setSelectedUser] = useState("");
   const [selectedUserList, setSelectedUserList] = useState([]);
   const [error, setError] = useState("");
+  const [editMode, setEditMode] = useState(false);
 
   const user = useSelector((state) => state.userLogin);
   const { userInfo } = user;
@@ -46,6 +47,9 @@ const Groups = () => {
 
   const groupStatus = useSelector((state) => state.createGroup);
   const { success, loading: groupLoading } = groupStatus;
+
+  const group = useSelector((state) => state.getGroupDetails);
+  const { groupDetails } = group;
 
   useEffect(() => {
     if (userInfo) {
@@ -67,8 +71,9 @@ const Groups = () => {
       if (user) {
         userArr.push(user);
       }
-
-      setSelectedUserList(userArr);
+      if (userArr.length > 0) {
+        setSelectedUserList(userArr);
+      }
     }
   }, [allUsers, userInfo]);
 
@@ -77,6 +82,16 @@ const Groups = () => {
       navigate(redirect);
     }
   }, [success, navigate, redirect]);
+
+  useEffect(() => {
+    if (groupDetails) {
+      setGroupName(groupDetails.groupName);
+      setStartDate(groupDetails.startDate);
+      setBudget(groupDetails.budget);
+      setSelectedUserList(groupDetails.usersInGroup);
+      setEditMode(true);
+    }
+  }, [groupDetails]);
 
   const addUser = () => {
     if (!selectedUser) {
@@ -222,8 +237,13 @@ const Groups = () => {
           </FormControl>
         </Col>
         <Col xs={5} sm={6} md={4}>
-          <Button variant="primary" className="my-3" onClick={onCreateGroup}>
-            Create group
+          <Button
+            disabled={editMode}
+            variant="primary"
+            className="my-3"
+            onClick={onCreateGroup}
+          >
+            {editMode ? <span>Edit Group</span> : <span>Create group</span>}
           </Button>
         </Col>
       </Row>

@@ -4,8 +4,11 @@ import { LinkContainer } from "react-router-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userAction";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -13,6 +16,10 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
+  };
+
+  const groupDetailsClick = () => {
+    navigate("/groups");
   };
 
   return (
@@ -37,6 +44,9 @@ const Header = () => {
                   title={userInfo.name}
                   id="username"
                 >
+                  <NavDropdown.Item onClick={groupDetailsClick}>
+                    Group Details
+                  </NavDropdown.Item>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>

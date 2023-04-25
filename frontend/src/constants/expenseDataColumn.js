@@ -15,7 +15,7 @@ export const columns = [
     editable: true,
     headerAlign: "center",
     align: "center",
-    flex: 1,
+    flex: 2,
     headerClassName: "expense-grid-header",
   },
   {
@@ -34,7 +34,7 @@ export const columns = [
     editable: true,
     headerAlign: "center",
     align: "center",
-    flex: 2,
+    flex: 1.5,
     headerClassName: "expense-grid-header",
     valueGetter: (params) => new Date(params.row.createdDate),
   },

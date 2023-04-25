@@ -13,12 +13,14 @@ export const getStartEndPoint = (startDate, selectedMonth = null) => {
   let startPoint = "",
     endPoint = "";
 
-  if (currentDate <= startDate) {
+  if (currentDate < startDate) {
     startPoint = `${monthList[currentMonth - 1]}-${startDate}, ${currentYear}`;
-    endPoint = `${monthList[currentMonth]}-${startDate}, ${currentYear}`;
+    endPoint = `${monthList[currentMonth]}-${startDate - 1}, ${currentYear}`;
   } else {
     startPoint = `${monthList[currentMonth]}-${startDate}, ${currentYear}`;
-    endPoint = `${monthList[currentMonth + 1]}-${startDate}, ${currentYear}`;
+    endPoint = `${monthList[currentMonth + 1]}-${
+      startDate - 1
+    }, ${currentYear}`;
   }
   return { startPoint, endPoint };
 };
