@@ -6,7 +6,7 @@ dontenv.config();
 const env = process.env.NODE_ENV;
 
 const dbConnProd = mysql.createPool({
-  connectionLimit: 10,
+  connectionLimit: 1000,
   acquireTimeout: 10000,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -16,7 +16,7 @@ const dbConnProd = mysql.createPool({
 });
 
 let dbConn = mysql.createPool({
-  connectionLimit: 10,
+  connectionLimit: 1000,
   acquireTimeout: 10000,
   host: process.env.LOCAL_DB_HOST,
   user: process.env.LOCAL_DB_USER,
