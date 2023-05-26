@@ -49,7 +49,6 @@ const ViewExpense = () => {
   }, [dispatch, userInfo, navigate]);
 
   const onEdit = useCallback(async (newRow, oldRow) => {
-    console.log(newRow, oldRow);
     return newRow;
   }, []);
 

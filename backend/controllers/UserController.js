@@ -36,11 +36,9 @@ const registerUser = asyncHandler(async (req, res, next) => {
 });
 
 const authUser = asyncHandler(async (req, res, next) => {
-  console.log(req.body);
   const query = util.promisify(dbConn.query).bind(dbConn);
   try {
     const { email, password } = req.body;
-    console.log(email);
     const userArray = await query(
       `SELECT * FROM u932593839_ipl.users u where u.name = "${email}"`
     );
