@@ -232,7 +232,7 @@ const Groups = () => {
               type="number"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              endAdornment={<InputAdornment position="end">¥</InputAdornment>}
+              endAdornment={<InputAdornment position="end">₹</InputAdornment>}
             />
           </FormControl>
         </Col>

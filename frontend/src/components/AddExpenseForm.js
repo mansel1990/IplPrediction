@@ -121,7 +121,7 @@ const AddExpenseForm = () => {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     endAdornment={
-                      <InputAdornment position="end">¥</InputAdornment>
+                      <InputAdornment position="end">₹</InputAdornment>
                     }
                   />
                 </FormControl>

@@ -59,7 +59,7 @@ const BudgetCard = ({ name }) => {
       {loading ? (
         <Loader />
       ) : (
-        <Message variant={variant}>{`${sendName}: ${sendAmount}¥`}</Message>
+        <Message variant={variant}>{`${sendName}: ${sendAmount}₹`}</Message>
       )}
     </>
   );

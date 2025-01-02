@@ -27,29 +27,22 @@ const ShopIcons = () => {
         </Col>
         <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
           <div
-            className="icon-image-div daiso"
-            iconkey="Daiso"
+            className="icon-image-div zepto"
+            iconkey="Zepto"
             onClick={onIconClick}
           ></div>
         </Col>
         <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
           <div
-            className="icon-image-div life"
-            iconkey="Life"
+            className="icon-image-div nilgiris"
+            iconkey="Nilgiris"
             onClick={onIconClick}
           ></div>
         </Col>
         <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
           <div
-            className="icon-image-div donki"
-            iconkey="Donki"
-            onClick={onIconClick}
-          ></div>
-        </Col>
-        <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
-          <div
-            className="icon-image-div lawson"
-            iconkey="Lawson"
+            className="icon-image-div levis"
+            iconkey="Levis"
             onClick={onIconClick}
           ></div>
         </Col>
@@ -62,13 +55,6 @@ const ShopIcons = () => {
         </Col>
       </Row>
       <Row className="icon-row mt-0 mt-md-4">
-        <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
-          <div
-            className="icon-image-div seven-eleven"
-            iconkey="711"
-            onClick={onIconClick}
-          ></div>
-        </Col>
         <Col xs={4} sm={3} md={2} className="icon-col mb-4 mb-md-0">
           <div
             className="icon-image-div suica"

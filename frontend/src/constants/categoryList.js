@@ -2,6 +2,7 @@ export const categoryList = [
   "Daily Essentials",
   "Grocery",
   "Transport",
+  "Dress",
   "Eating out",
   "Outing/Trip",
   "One time",
@@ -18,10 +19,10 @@ export const categoryList = [
 export const getCategory = (item) => {
   const lookUp = {
     711: "Daily Essentials",
-    Daiso: "Daily Essentials",
+    Zepto: "Daily Essentials",
     Lawson: "Daily Essentials",
-    Donki: "Daily Essentials",
-    Life: "Grocery",
+    Levis: "Dress",
+    Nilgiris: "Grocery",
     Vegitables: "Grocery",
     Cricket: "Sports/Games",
     Amazon: "Shopping",
