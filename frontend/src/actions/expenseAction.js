@@ -8,7 +8,7 @@ import {
   GET_EXPENSE_REQUEST,
   GET_EXPENSE_SUCCESS,
 } from "../constants/expenseConstants";
-import axios from "axios";
+import axios from "./axiosconfig";
 
 export const addExpense =
   (name, amount, category, date) => async (dispatch, getState) => {
